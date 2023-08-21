@@ -4,7 +4,9 @@
 
 </script>
 
-<div class="grid grid-cols-1 md:grid md:grid-cols-2 h-screen">
+
+<!-- <div class="grid grid-cols-1 md:grid md:grid-cols-2 h-screen"> -->
+<div class="grid grid-cols-2 h-screen">
   <BusinessInfo />
   <ContactUs />
 </div>
