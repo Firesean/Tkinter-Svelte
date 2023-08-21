@@ -1,0 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.isRequired {
+    @apply text-red-500 pl-[.2rem]; 
+}
+
+.error {
+    @apply text-red-500 text-sm;
+}
