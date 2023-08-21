@@ -40,12 +40,12 @@
     </label>
     <br>
     {#if fieldType === "email"}
-       <input id={title} class="min-w-[150px] w-full h-[2.25rem] border-2 rounded-md border-gray-300" bind:value={email} on:blur={validateEmail} required={isRequired}/>
+       <input id={title} class="contact-us-input" bind:value={email} on:blur={validateEmail} required={isRequired}/>
         <p class="error">{errors.email}</p>
     {:else if fieldType === "phone"}
-        <input id={title} class="min-w-[150px] w-full h-[2.25rem] border-2 rounded-md border-gray-300" bind:value={phone} on:blur={validatePhone} required={isRequired}/>
+        <input id={title} class="contact-us-input" bind:value={phone} on:blur={validatePhone} required={isRequired}/>
         <p class="error">{errors.phone}</p>
     {:else}
-        <input id={title} class="min-w-[150px] w-full h-[2.25rem] border-2 rounded-md border-gray-300" required={isRequired}/>
+        <input id={title} class="contact-us-input" required={isRequired}/>
     {/if}
 </div>
