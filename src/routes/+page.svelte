@@ -4,9 +4,10 @@
 
 </script>
 
-
-<!-- <div class="grid grid-cols-1 md:grid md:grid-cols-2 h-screen"> --> <!-- Screen < 600px Screen -->
-<div class="grid grid-cols-2 h-screen"> <!-- Screen > 600px Screen -->
+<!-- Screen < 600px Screen -->
+<div class="grid grid-cols-1 md:grid md:grid-cols-2 h-screen">
+<!-- 600px Screen -->
+<!-- <div class="grid grid-cols-2 h-screen"> Screen > --> 
   <BusinessInfo />
   <ContactUs />
 </div>
