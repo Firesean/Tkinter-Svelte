@@ -34,7 +34,7 @@
     }
 </script>
   
-<div>
+<div class="pt-2 pb-2">
     <label for={title} class="text-sm font-semibold pt-2 pb-2">
         {toTitleCase(title)}{#if isRequired}<span class="isRequired">*</span>{/if}
     </label>

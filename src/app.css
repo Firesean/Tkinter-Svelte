@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .contact-us-input {
-    @apply min-w-[150px] w-full h-[2.25rem] border-2 rounded-md border-gray-300;
+    @apply min-w-[150px] w-full h-[2.25rem] border-2 rounded-md border-gray-300 py-4 px-4;
 }
 
 .error {
