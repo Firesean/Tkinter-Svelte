@@ -8,11 +8,13 @@
     e.preventDefault(); // to prevent the form from refreshing the page
 
     try {
-      const response = await fetch('/submit', { 
+      const response = await fetch('./submitted', { 
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone }) 
       });
+
+      console.log(response);
       
       if (response.ok) {
         const jsonResponse = await response.json();
@@ -27,7 +29,7 @@
 </script>
 
 
-<form action="?/submit" method="POST" class="pl-4 pr-4 md:pl-10 md:pr-10 mt-[2rem] md:mt-[5rem] min-w-[200px]" on:submit={submitData}>
+<form class="pl-4 pr-4 md:pl-10 md:pr-10 mt-[2rem] md:mt-[5rem] min-w-[200px]" on:submit={submitData}>
   <h1 class="font-bold whitespace-nowrap">Contact Us</h1>
   <ContactUsInputfield bind:value={name} title="name" isRequired=true/>
   <ContactUsInputfield bind:value={email} title="email" isRequired=true fieldType="email"/>
