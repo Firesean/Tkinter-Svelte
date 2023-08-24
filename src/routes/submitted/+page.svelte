@@ -1,6 +1,6 @@
 <script>
       const submit = async () => {
-        const res = await fetch('/submit', {
+        const res = await fetch('/submitted', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({name}),
