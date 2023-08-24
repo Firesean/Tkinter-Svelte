@@ -5,7 +5,7 @@
   let phone = '';
 
   const submitForm = async () => {
-      const res = await fetch('./submitted', { 
+      const res = await fetch('../submitted', { 
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({name, email, phone})
@@ -14,10 +14,9 @@
       const data = await res.json();
       if(data.success) {
           console.log("Information Sent");
-      } else {
-          console.log('Failed to post data');
-      }
-  }
+      };
+      console.log(response);
+    };
 </script>
 
 
