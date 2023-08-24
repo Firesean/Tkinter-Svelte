@@ -1,7 +1,9 @@
 <script>
+	import SidenavBar from "$lib/components/sidenav-bar.svelte";
 	import "../app.css";
 </script>
 
-<div class="min-w-[400px]">
+<div class="flex">
+	<SidenavBar/>
 	<slot />
 </div>

@@ -10,6 +10,14 @@
     @apply text-red-500 text-sm;
 }
 
+.hideOnMobile {
+    @apply hidden md:inline xs:block;
+} 
+
 .isRequired {
     @apply text-red-500 pl-[.2rem]; 
+}
+
+.responsiveText {
+    @apply lg:text-base md:text-[.9rem] sm:text-[.7rem] xl:text-[1.05rem]; 
 }
