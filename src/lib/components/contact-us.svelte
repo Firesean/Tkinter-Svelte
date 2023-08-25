@@ -5,31 +5,35 @@
   let phone = '';
 
   const submitForm = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log("Sending Data");
     console.log(name);
     console.log(email);
     console.log(phone);
-    try {
-        const response = await fetch('../submitted', { 
-            method: 'POST',
-            // headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({name, email, phone}),
-        });
 
-        if(response.ok) {
-            console.log(await response.text()); // log the response body
-            try {
-                const data = JSON.parse(await response.text());
-            } catch(err) {
-                console.log('Error parsing JSON response', err);
-            }
-        } else {
-            console.log("Error: " + response.status);
-        };
-    } catch(e) {
-        console.log('Fetch failed', e);
-    }
+    try {
+      let formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", phone);
+
+      const response = await fetch('../submitted', { 
+          method: 'POST',
+          body: formData
+      });
+      console.log(response);
+      if(response.ok) {
+        const data = await response.json();
+        if (data.success && data.redirectUrl) {
+          window.location.href = data.redirectUrl;
+        }
+      } 
+      else {
+          console.log("Error: " + response.status);
+      };
+  } catch(e) {
+      console.log('Fetch failed', e);
+  }
 };
 </script>
 

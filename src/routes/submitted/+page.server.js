@@ -1,22 +1,26 @@
 export const actions = {
     default: async ({ request }) => {
+        let name, email, phone;
         console.log("Request received");
-        console.log(request.body);
-        let data;
+        // console.log(request);
+        const formData = await request.formData();
+        console.log(formData);
         try {
-            data = JSON.parse(request.body);
+            name = formData.get("name");
+            email = formData.get("email");
+            phone = formData.get("phone");
+            console.log(name, email, phone);
         } catch (error) {
-            console.error("Error parsing JSON: ", error);
+            console.error("Error parsing through the form data : ", error);
             return { success: false };
         }
 
-        if (!data || !data.name || !data.email || !data.phone) {
+        if (!name || !email || !phone) {
             console.error("Invalid data: ", data);
-            return { success: false };
+            return { success: false, redirectUrl: "../" };
         }
-
-        const { name, email, phone } = data;
-        console.log("Received data: ", name, email, phone);
-        return { success: true };
+        // const { name, email, phone } = data;
+        // console.log("Received data: ", name, email, phone);
+        return { success: true, redirectUrl: "../submitted"}; // , data : {name, email, phone} };
     }
 }
