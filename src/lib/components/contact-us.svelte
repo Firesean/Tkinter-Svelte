@@ -3,6 +3,21 @@
   let name = '';
   let email = '';
   let phone = '';
+  let failedSubmission = false;
+  const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  const phoneRegex = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+  let error = "";
+  
+  const validate = (fieldType) => {
+    if((fieldType === "email" && !emailRegex.test(email)) || (fieldType === "phone" && !phoneRegex.test(phone))) {
+        error = "Please enter the form properly";
+        return false;
+    } 
+    else {
+        error = "";
+        return true;
+    }
+  };
 
   const submitForm = async (event) => {
     event.preventDefault();
@@ -11,6 +26,10 @@
     console.log(email);
     console.log(phone);
 
+    if(!validate("email") || !validate("phone")){
+      return false;
+    }
+    
     try {
       let formData = new FormData();
       formData.append("name", name);
@@ -21,13 +40,10 @@
           method: 'POST',
           body: formData
       });
-      console.log(response);
+
       if(response.ok) {
-        const data = await response.json();
-        if (data.success && data.redirectUrl) {
-          window.location.href = data.redirectUrl;
-        }
-      } 
+          window.location.href = response.url + `?name="${name}"&email="${email}"&phone="${phone}"`;
+      }
       else {
           console.log("Error: " + response.status);
       };
@@ -47,5 +63,6 @@
   
   <div class="text-right">
     <button class="bg-violet-600 text-white pl-4 pr-4 xs:pl-7 xs:pr-7 p-2 w-[10rem] xs:w-auto rounded-md mt-4 text-[1rem] md:text-lg" type="submit">Send Message</button>
+    <p class="error">{error}</p>
   </div>
 </form>
