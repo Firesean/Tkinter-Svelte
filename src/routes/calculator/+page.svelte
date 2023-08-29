@@ -2,4 +2,7 @@
   import Calculator from "$lib/components/calculator.svelte";
 
 </script>
-<Calculator/>
+
+<div class="min-w-[400px]">
+  <Calculator/>
+</div>

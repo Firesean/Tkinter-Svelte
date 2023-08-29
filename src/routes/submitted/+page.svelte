@@ -12,8 +12,8 @@
     });
 </script>
 
-<div class="flex flex-col w-full text-center bg-gray-100 min-w-[300px]">
-    <div class="flex flex-col items-center p-4 flex-grow">
+<div class="flex flex-col w-screen text-center bg-gray-100 min-w-[300px]">
+    <div class="flex flex-col items-center pb-12 pt-4 pl-4 pr-4">
         <p class="text-[2rem] border-b-2 border-b-gray-400">Thank you {name}</p> 
         <p class="text-[1.5rem] mt-8">Will Be In Contact!</p>
     </div>

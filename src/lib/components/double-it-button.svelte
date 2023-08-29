@@ -1,7 +1,14 @@
 <script>
-    import CalculatorButton from "./calculator_button.svelte";
+    import { createEventDispatcher } from 'svelte';
+    import CalculatorButton from "./calculator-button.svelte";
+    const dispatch = createEventDispatcher();
+
+    function handleClick(event) {
+        dispatch('click', event.detail);
+    }
 </script>
-<div class="relative left-[1.5rem] top-[1.5rem]">
-    <CalculatorButton value="x2"/>
-    <p class="relative bottom-10 left-[3.5rem]">Double It</p>
+
+<div class="col-span-4">
+    <CalculatorButton value="x2" on:click={handleClick}/>
+    <p class="relative bottom-10 left-[45%]">Double It</p>
 </div>
