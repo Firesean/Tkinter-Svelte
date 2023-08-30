@@ -35,6 +35,7 @@
 
     if (result && result.success) {
         console.log("Response from post : ", result.doubledTo);
+        inputValue = result.doubledTo;
     } else {
         console.error("Error in response data: ", dataObject);
     }
