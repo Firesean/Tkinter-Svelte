@@ -21,3 +21,40 @@
 .responsiveText {
     @apply lg:text-base md:text-[.9rem] sm:text-[.7rem] xl:text-[1.05rem]; 
 }
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+h3 + p, p.after-header {
+    @apply text-sm leading-5 text-gray-600 mt-0.5; /* reduced margin vs h2 */
+}
+
+h3 {
+    @apply text-lg font-semibold leading-7 text-gray-900
+}
+
+@screen sm {
+    h3{
+        @apply text-xl truncate;
+    }
+}
+
+.button {
+    @apply h-9;
+    @apply w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-3 py-2 font-semibold tracking-wide bg-white text-gray-700;
+    @apply col-start-2 text-sm;
+    @apply select-none;
+}
+
+button.primary{
+    @apply bg-indigo-600 text-white;
+}
+
+button.primary:focus{
+    @apply bg-indigo-700 ring-indigo-500;
+}
+
+button[disabled]{
+    @apply bg-gray-200 text-gray-600 border-gray-300 cursor-not-allowed;
+}
