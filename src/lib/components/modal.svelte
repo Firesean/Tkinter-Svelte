@@ -31,7 +31,7 @@
                         <XMarkOutline stroke-width="2" class="w-5 h-5 text-gray-400"/>
                     </div>
                 {/if}
-                <!-- <slot></slot> -->
+                <slot></slot>
             </div>
         </div>
     </div>

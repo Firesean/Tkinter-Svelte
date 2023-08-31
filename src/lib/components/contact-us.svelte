@@ -3,7 +3,6 @@
   let name = '';
   let email = '';
   let phone = '';
-  let failedSubmission = false;
   const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   const phoneRegex = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
   let error = "";
