@@ -4,7 +4,6 @@
     import Alerts from '$lib/components/alerts.svelte';
     import "../app.css";
 	import { writable } from 'svelte/store';
-  import AlertButton from '$lib/components/alert-button.svelte';
 
 	let addAlert;
 	const addAlertStore = new writable(() => {});
@@ -14,9 +13,9 @@
 	});
 </script>
 
-<div class="flex">
+<div class="flex min-w-[400px]">
     <SidenavBar/>
     <slot /> 
+	<Alerts bind:addAlert/> 
 </div>
 
-<Alerts bind:addAlert/> 

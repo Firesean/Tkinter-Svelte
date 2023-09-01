@@ -10,5 +10,5 @@
 
 <div class="col-span-4">
     <CalculatorButton value="x2" on:click={handleClick}/>
-    <p class="relative bottom-10 left-[45%]">Double It</p>
+    <p class="relative bottom-10 left-[45%] hideOnMobile">Double It</p>
 </div>

@@ -3,6 +3,6 @@
 
 </script>
 
-<div class="min-w-[400px]">
+<div class="w-screen">
   <Calculator/>
 </div>

@@ -61,7 +61,7 @@
 }
 </script>
 
-<div class='grid grid-cols-4 gap-2 w-screen'>
+<div class='grid grid-cols-4 gap-2 w-full'>
   <input class='w-full h-24 col-span-4 px-12 py-auto text-[4rem] border-2 border-black' 
   bind:value={inputValue} on:input={handleInput} 
   on:keydown={(event) => { if (event.key === 'Enter') handleButtonClick({ detail: '=' }) }}/>
