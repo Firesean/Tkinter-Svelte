@@ -1,4 +1,5 @@
 <script>
+  import {onMount} from "svelte";
   import ContactUsInputfield from "./contact-us-inputfield.svelte";
   let name = '';
   let email = '';
@@ -6,7 +7,7 @@
   const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   const phoneRegex = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
   let error = "";
-  
+  let cookieMonsterFound = false;
   const validate = (fieldType) => {
     if((fieldType === "email" && !emailRegex.test(email)) || (fieldType === "phone" && !phoneRegex.test(phone))) {
         error = "Please enter the form properly";
@@ -50,6 +51,27 @@
       console.log('Fetch failed', e);
   }
 };
+
+  
+
+  onMount(async () => {
+    if (typeof window !== 'undefined') {
+        let cookiesEnabled = navigator.cookieEnabled;
+  
+        if (cookiesEnabled) {
+          const response = await fetch("/api/cookie-monster", {
+              method:"POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({cookiesEnabled})
+            });
+
+          let responseData = await response.json();
+          cookieMonsterFound = responseData.isCookieMonster;
+        }
+      }
+  });
 </script>
 
 
@@ -64,4 +86,8 @@
     <button class="bg-violet-600 text-white pl-4 pr-4 xs:pl-7 xs:pr-7 p-2 w-[10rem] xs:w-auto rounded-md mt-4 text-[1rem] md:text-lg" type="submit">Send Message</button>
     <p class="error">{error}</p>
   </div>
+  {#if cookieMonsterFound}
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE1MDc5YmItNDVjYS00M2I5LThiYjEtMDUzMjQzOGZkY2U0XkEyXkFqcGdeQXVyMTM1MjE2NjY5._V1_.jpg" alt="Cookie Monster" class="pt-4">
+  {/if}
 </form>
+
