@@ -1,5 +1,6 @@
 <script>
     import PreflectLogo from "$lib/components/preflect-logo.svelte";
+  import SidenavBlock from "$lib/components/sidenav-block.svelte";
     import SideNavBlock from "$lib/components/sidenav-block.svelte";
 
     import {getContext} from "svelte";
@@ -53,6 +54,13 @@
             link="#"
             rotation="0"
             func={test}/>
+        </li>
+        <li>
+            <SidenavBlock
+            svgPathing="M 2 3 L 4 1 C 5 0.6667 6 0.3333 7 0 C 9 0 11 0 13 0 C 14.3333 0.6667 15.6667 1.3333 17 2 Q 18 5.5 19 9 C 18.6667 10.6667 18.3333 12.3333 18 14 C 17 15 16 16 15 17 C 13.3333 17.3333 11.6667 17.6667 10 18 C 8.3333 18 6.6667 18 5 18 C 3.6667 16.6667 2.3333 15.3333 1 14 C 0.6667 12.3333 0.3333 10.6667 0 9 C 0.6667 7 1.3333 5 2 3 M 3 7 A 1 1 0 0 0 5 9 A 1 1 0 0 0 3 7 M 10 7 A 1 1 0 0 0 12 9 A 1 1 0 0 0 10 7 M 7 13 A 1 1 0 0 0 9 15 A 1 1 0 0 0 7 13 M 13 12 A 1 1 0 0 0 15 14 A 1 1 0 0 0 13 12 M 10 2 A 1 1 0 0 0 10 5 A 1 1 0 0 0 10 2 M 5 3 A 1 1 0 0 0 5 5 A 1 1 0 0 0 5 3"
+            link="https://cookie-test-virid.vercel.app/"
+            rotation="0"
+            />
         </li>
     </ul>
 </div>
