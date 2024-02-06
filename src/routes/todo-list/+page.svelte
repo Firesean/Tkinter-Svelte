@@ -88,7 +88,6 @@
     }
 
     button {
-        padding: 8px 16px;
         background-color: #007bff;
         color: #fff;
         border: none;
@@ -136,17 +135,19 @@
     <div class="w-[80%] m-auto bg-white h-full border-[1px] border-black rounded-md p-4">
         <h1>Todo List</h1>
 
-        <div class="grid grid-cols-2 w-[50%] m-auto">
-            <input class="rounded-md" type="text" placeholder="Add a new task" bind:value={newTask} on:keydown={(e) => e.key === 'Enter' && addTask()} />
-            <button on:click={addTask} class="rounded-md">Add Task</button>
+        <div class="grid grid-cols-2 gap-8 w-[70%] mx-auto">
+            <input class="rounded-md min-w-[100px] w-[100%]" type="text" placeholder="Add a new task" bind:value={newTask} on:keydown={(e) => e.key === 'Enter' && addTask()} />
+            <button on:click={addTask} class="rounded-md p-2 w-[100%]">Add Task</button>
         </div>
 
         <ul>
           {#each $tasks as task}
-            <li class="grid grid-cols-3 gap-2 mt-4 w-[50%] m-auto border-[1px] p-4 border-slate-300 rounded-md {task.completed ? 'completed' : ''}">
-              <input type="checkbox" checked={task.completed} on:click={() => toggleCompletion(task.id)} />
-              <input class="rounded-md" type="text" value={task.text} on:input={(e) => editTask(task.id, e.target.value)} />
-              <button on:click={() => deleteTask(task.id)} class="delete rounded-md">Delete</button>
+            <li class="mt-4 m-auto border-[1px] p-4 border-slate-300 rounded-md {task.completed ? 'completed' : ''}">
+              <div class="min-w-[200px] grid grid-cols-3 gap-2 w-full">
+                <input type="checkbox" checked={task.completed} on:click={() => toggleCompletion(task.id)} />
+                <input class="rounded-md min-w-[80px] m-auto" type="text" value={task.text} on:input={(e) => editTask(task.id, e.target.value)} />
+                <button on:click={() => deleteTask(task.id)} class="delete rounded-md p-2 m-auto">Delete</button>
+              </div>
             </li>
           {/each}
         </ul>
