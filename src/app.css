@@ -26,6 +26,14 @@
     font-family: 'Inter', sans-serif;
 }
 
+h1 {
+    @apply text-4xl font-semibold leading-7 text-gray-900 pt-4 pb-4
+}
+
+h2 {
+    @apply text-xl font-semibold leading-7 text-gray-900 pt-2 pb-2
+}
+
 h3 + p, p.after-header {
     @apply text-sm leading-5 text-gray-600 mt-0.5; /* reduced margin vs h2 */
 }
