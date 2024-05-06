@@ -21,7 +21,7 @@
 </script>
 
 {#if folder == "pathrise"}
-	<div class="bg-blue-300 h-screen">
+	<div class="bg-blue-300 h-[140vh]">
 		<slot />
 	</div>
 {:else}

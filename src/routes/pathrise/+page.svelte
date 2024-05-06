@@ -1,6 +1,10 @@
 <style>
     .videoContainer {
-        @apply w-full flex flex-wrap mt-4 bg-white p-8 rounded-md border-2 border-gray-400;
+        @apply w-full flex flex-col mt-4 bg-white p-8 rounded-md border-2 border-gray-400;
+    }
+
+    h2{
+        @apply text-center;
     }
 </style>
 
