@@ -56,11 +56,20 @@
             func={test}/>
         </li> -->
         <li>
-            <SidenavBlock
+            <SideNavBlock
             svgPathing="M0 0h24v24H0z M4 5h16c.55 0 1 .45 1 1s-.45 1-1 1H4c-.55 0-1-.45-1-1s.45-1 1-1zM4 11h16c.55 0 1 .45 1 1s-.45 1-1 1H4c-.55 0-1-.45-1-1s.45-1 1-1zM4 17h10c.55 0 1 .45 1 1s-.45 1-1 1H4c-.55 0-1-.45-1-1s.45-1 1-1z"
             link="../todo-list"
             rotation="0"
             scale=.75
+            />
+        </li>
+
+        <li>
+            <SideNavBlock 
+            svgPathing="M 0 0 L 8 0 L 8 8 L 0 8 L 0 0 M 1 2 L 3 2 L 3 4 L 1 4 L 1 2 M 5 2 L 7 2 L 7 4 L 5 4 L 5 2 M 3 4 L 5 4 L 5 5 L 6 5 L 6 8 L 5 8 L 5 7 L 3 7 L 3 8 L 2 8 L 2 6 L 2 5 L 3 5 L 3 4"
+            link="../minecraft"
+            rotaiton="0"
+            scale=2.1
             />
         </li>
     </ul>
