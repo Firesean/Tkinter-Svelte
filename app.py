@@ -1,23 +1,19 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import tkinter as tk
-from tkinter import messagebox
 import threading
+from src.games.dotgame import Main
 
 app = Flask(__name__)
 CORS(app)
 
 def tkinter_function(data):
-    def show_message():
-        root = tk.Tk()
-        root.withdraw()
-        messagebox.showinfo("Message", f"Received data: {data}")
-        root.destroy()
+    def run_app():
+        Main.run_game()
     
     if threading.current_thread() == threading.main_thread():
-        show_message()
+        run_app()
     else:
-        threading.Thread(target=show_message).start()
+        threading.Thread(target=run_app).start()
 
 @app.route('/process', methods=['POST'])
 def process_data():
