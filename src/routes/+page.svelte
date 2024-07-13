@@ -1,10 +1,30 @@
 <script>
-  import BusinessInfo from "$lib/components/business-info.svelte";
-  import ContactUs from "$lib/components/contact-us.svelte";
+  async function processData() {
+    try {
+      const data = { data: 'Hello from Svelte!' };
+      const response = await fetch('http://localhost:5000/process', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      console.log(result.message);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 h-screen">
-  <BusinessInfo />
-  <ContactUs />
-</div>
+<main>
+  <button on:click={processData}>Process Data</button>
+</main>
 
+<style>
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
