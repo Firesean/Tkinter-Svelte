@@ -1,7 +1,5 @@
 <script>
   import { page } from '$app/stores';
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
   async function processData() {
     try {
       console.log($page)

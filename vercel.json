@@ -17,7 +17,7 @@
 	  },
 	  {
 		"src": "/(.*)",
-		"dest": "app.py"
+		"dest": "/src/app.py"
 	  }
 	],
 	"installCommand": "npm install --save-dev concurrently && npm install && pip install flask flask_cors",
