@@ -6,8 +6,5 @@
   "routes": [
     { "src": "/", "dest": "app.py" }
   ],
-  "frameworks": {
-    "svelte": {}
-  },
   "installCommand": ["npm install", "pip install flask flask_cors"]
 }
