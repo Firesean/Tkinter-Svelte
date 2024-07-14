@@ -2,7 +2,9 @@
 	"name": "contact-us",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "concurrently \"npm run vite\" \"npm run flask\"",
+		"vite": "vite dev",
+		"flask": "python app.py",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -27,6 +29,7 @@
 		"@sveltejs/kit": "^1.20.4",
 		"@sveltejs/package": "^2.0.0",
 		"autoprefixer": "^10.4.14",
+		"concurrently": "^8.2.2",
 		"postcss": "^8.4.27",
 		"publint": "^0.1.9",
 		"svelte": "^4.0.5",
@@ -37,7 +40,5 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-	}
+	"type": "module"
 }
