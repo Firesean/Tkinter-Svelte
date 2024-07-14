@@ -9,8 +9,5 @@
   "env": {
     "FLASK_ENV": "production"
   },
-  "install": {
-    "ignoreScripts": true
-  },
   "build": {}
 }
