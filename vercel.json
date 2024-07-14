@@ -1,12 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "src/index.html", "use": "@vercel/static-build" },
-      { "src": "api/flask_backend/app.py", "use": "@vercel/python" }
-    ],
-    "routes": [
-      { "src": "/api/(.*)", "dest": "/api/flask_backend/app.py" },
-      { "src": "/(.*)", "dest": "/index.html" }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    { "src": "src/index.html", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "app.py" }
+  ],
+  "frameworks": {
+    "svelte": {},
+    "flask": {}
+  },
+  "installCommand": ["npm install", "pip install flask flask_cors"]
+}
