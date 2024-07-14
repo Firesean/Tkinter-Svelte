@@ -6,5 +6,11 @@
   "routes": [
     { "src": "/", "dest": "app.py" }
   ],
-  "installCommand": ["npm install", "pip install flask flask_cors"]
+  "env": {
+    "FLASK_ENV": "production"
+  },
+  "install": {
+    "ignoreScripts": true
+  },
+  "build": {}
 }
