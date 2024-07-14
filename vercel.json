@@ -7,8 +7,7 @@
     { "src": "/", "dest": "app.py" }
   ],
   "frameworks": {
-    "svelte": {},
-    "flask": {}
+    "svelte": {}
   },
   "installCommand": ["npm install", "pip install flask flask_cors"]
 }
