@@ -22,9 +22,6 @@
 	],
 	"installCommand": "npm install --save-dev concurrently && npm install && pip install flask flask_cors",
 	"buildCommand": "npm run build",
-	"framework": {
-	  "name": "svelte",
-	  "version": "latest"
-	}
+	"framework": "svelte"
   }
   
