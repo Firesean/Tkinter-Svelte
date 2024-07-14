@@ -5,7 +5,7 @@
 		"dev": "concurrently \"npm run vite\" \"npm run flask\"",
 		"vite": "vite dev",
 		"flask": "python app.py",
-		"build": "npm run vite-build && npm run package",
+		"build": "concurrently \"npm run vite-build && npm run package\" \"npm run flask\"",
 		"vite-build": "vite build",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"preview": "vite preview",
