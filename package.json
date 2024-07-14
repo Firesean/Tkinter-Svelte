@@ -5,9 +5,10 @@
 		"dev": "concurrently \"npm run vite\" \"npm run flask\"",
 		"vite": "vite dev",
 		"flask": "python app.py",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
+		"build": "npm run vite-build && npm run package",
+		"vite-build": "vite build",
 		"package": "svelte-kit sync && svelte-package && publint",
+		"preview": "vite preview",
 		"prepublishOnly": "npm run package"
 	},
 	"exports": {
