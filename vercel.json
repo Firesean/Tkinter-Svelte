@@ -16,7 +16,7 @@
 		"dest": "/src/index.html"
 	  },
 	  {
-		"src": "/",
+		"src": "/(.*)",
 		"dest": "app.py"
 	  }
 	],
